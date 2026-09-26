@@ -1,0 +1,401 @@
+<!doctype html><html lang="sk"><meta charset="utf-8">
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Koliba Uhlisko · Banská Bystrica — neoficiálny návrh</title>
+<meta name="description" content="Neoficiálna ukážka webu pre Kolibu Uhlisko na brehu Hrona v Banskej Bystrici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef1e5; --paper-2:#e2e7d6; --paper-3:#d8e0cd;
+  --ink:#241610; --ink-85:rgba(36,22,16,.85); --ink-70:rgba(36,22,16,.7);
+  --ink-45:rgba(36,22,16,.45); --ink-22:rgba(36,22,16,.22); --ink-12:rgba(36,22,16,.12);
+  --wood:#2b1b12; --wood-deep:#160d09; --wood-line:rgba(244,233,214,.16); --wood-line-2:rgba(244,233,214,.34);
+  --spruce:#20402c; --spruce-2:#2c5439;
+  --river:#2b6d66; --river-light:#bfd9d2; --river-deep:#1c4844;
+  --geranium:#b23f2b; --geranium-deep:#8a2f1f;
+  --cream:#f5ecdc; --cream-dim:rgba(245,236,220,.72);
+  --font-d:'Sora',"Segoe UI",Arial,sans-serif;
+  --font-b:'Gelasio',Georgia,"Times New Roman",serif;
+  --gut:16px; --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font-b);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-d);margin:0;line-height:1.08;font-weight:700}
+p{margin:0}
+.num{font-family:var(--font-d);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+:focus-visible{outline:2px solid var(--river);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--cream);color:var(--ink);padding:.6em 1em;z-index:200}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut)}
+
+/* demo notice */
+.demo{background:var(--wood-deep);color:var(--cream-dim);font:600 12.5px/1.4 var(--font-d);text-align:center;padding:8px var(--gut);letter-spacing:.01em}
+.demo b{color:var(--cream);font-weight:700}
+
+/* header */
+.head{background:var(--paper);border-bottom:1px solid var(--ink-12);position:relative;z-index:20}
+.head__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 14px;padding:12px var(--gut);max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;flex-direction:column;line-height:1.05}
+.brand b{font:700 19px/1 var(--font-d);letter-spacing:.02em;text-transform:uppercase}
+.brand span{font:400 12px/1.3 var(--font-b);color:var(--ink-70);font-style:italic}
+.nav{display:flex;flex-wrap:wrap;gap:2px;max-width:100%}
+.nav a{white-space:nowrap;font:600 13px/1 var(--font-d);text-transform:uppercase;letter-spacing:.05em;color:var(--ink-70);padding:9px 10px;text-decoration:none;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav a:hover{color:var(--river);border-color:var(--river)}
+.head__call{display:none;font:700 13.5px/1 var(--font-d);color:var(--cream);background:var(--geranium);padding:11px 16px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.head__call:hover{background:var(--geranium-deep)}
+@media(min-width:700px){.head__call{display:inline-block}}
+
+/* hero */
+.hero{position:relative;min-height:min(560px,78vh);display:flex;align-items:flex-end;overflow:hidden}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,9,6,.12) 0%,rgba(18,11,7,.42) 55%,rgba(15,9,6,.86) 100%)}
+.hero__content{position:relative;z-index:2;color:var(--cream);padding:0 var(--gut) 54px;max-width:var(--maxw);margin:0 auto;width:100%}
+.hero__addr{font:600 13px/1 var(--font-d);text-transform:uppercase;letter-spacing:.09em;color:var(--river-light);margin-bottom:14px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.3rem);letter-spacing:-.01em}
+.hero__tag{font:italic 400 19px/1.5 var(--font-b);color:var(--cream-dim);margin-top:14px;max-width:34em}
+.hero__tag small{display:block;font:400 12.5px/1 var(--font-d);font-style:normal;text-transform:uppercase;letter-spacing:.08em;color:var(--river-light);margin-top:8px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;font:700 14.5px/1 var(--font-d);text-decoration:none;letter-spacing:.01em;white-space:nowrap}
+.btn--primary{background:var(--geranium);color:var(--cream)}
+.btn--primary:hover{background:var(--geranium-deep)}
+.btn--ghost{background:rgba(245,236,220,.1);color:var(--cream);border:1px solid var(--wood-line-2)}
+.btn--ghost:hover{background:rgba(245,236,220,.2)}
+.hero__badge{position:absolute;left:var(--gut);bottom:-1px;z-index:3;background:var(--ink);color:var(--cream);display:flex;align-items:baseline;gap:8px;padding:9px 14px;transform:translateY(50%)}
+.hero__badge .num{font-size:17px;font-weight:700;color:var(--river-light)}
+.hero__badge small{font:600 10.5px/1 var(--font-d);text-transform:uppercase;letter-spacing:.06em;color:var(--cream-dim)}
+
+/* wave ornament */
+.wave{display:block;width:100%;height:26px;margin-top:20px}
+.wave path{fill:none;stroke:var(--river);stroke-width:2;opacity:.55}
+
+/* levels grid = vodočet spine */
+.levels{display:grid;grid-template-columns:34px minmax(0,1fr);max-width:var(--maxw);margin:0 auto;padding:0 var(--gut) 0 8px}
+@media(min-width:640px){.levels{grid-template-columns:56px minmax(0,1fr);padding:0 var(--gut)}}
+@media(min-width:900px){.levels{grid-template-columns:78px minmax(0,1fr)}}
+
+.rail{position:relative}
+.rail::before{content:"";position:absolute;left:50%;top:0;width:16px;height:2px;background:var(--ink-45);transform:translate(-50%,0)}
+.rail__line{position:absolute;left:50%;top:0;bottom:0;width:2px;transform:translateX(-50%);
+  background:repeating-linear-gradient(to bottom,var(--ink-45) 0 3px,transparent 3px 15px)}
+.rail__tag{position:relative;display:inline-flex;padding-top:8px}
+.rail__tag b{writing-mode:vertical-rl;transform:rotate(180deg);font:700 10.5px/1 var(--font-d);letter-spacing:.16em;color:var(--ink-70);white-space:nowrap;text-transform:uppercase}
+@media(min-width:640px){.rail__tag b{font-size:11.5px}}
+.rail__stop{position:absolute;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px}
+.rail__stop i{display:block;width:14px;height:2px;background:var(--river)}
+.rail__stop b{font-size:9.5px;color:var(--river-deep);white-space:nowrap}
+@media(min-width:640px){.rail__stop b{font-size:10.5px}}
+
+.panel{padding:46px 0 50px;border-bottom:1px solid var(--ink-12)}
+.levels>.panel:last-of-type,.levels>.rail:last-of-type{border-bottom:none}
+.panel h2{font-size:clamp(1.5rem,3.6vw,2.15rem);margin-bottom:16px}
+.panel__lede{font:italic 400 17px/1.6 var(--font-b);color:var(--ink-85);max-width:46em}
+
+/* status */
+.status{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin:18px 0 22px;background:var(--paper-2);padding:16px 18px;border:1px solid var(--ink-12)}
+#statusDot{width:13px;height:13px;border-radius:50%;flex-shrink:0;background:var(--ink-22)}
+#statusDot.is-open{background:var(--river)}
+#statusDot.is-closing{background:#b8842f}
+#statusDot.is-closed{background:var(--ink-45)}
+#statusDot.is-note{background:var(--river-deep)}
+#statusText{font:600 17px/1.3 var(--font-d)}
+#statusText b{font-family:var(--font-d);font-variant-numeric:tabular-nums}
+#todayLabel{font:400 14px/1.3 var(--font-b);color:var(--ink-70)}
+.hours{width:100%;border-collapse:collapse;max-width:420px;margin-top:6px}
+.hours td{padding:6px 4px;font-size:14.5px;border-bottom:1px solid var(--ink-12)}
+.hours td:first-child{color:var(--ink-70);width:44%}
+.hours td:last-child{text-align:right;font-family:var(--font-d);font-variant-numeric:tabular-nums}
+.hours tr[data-today] td{color:var(--ink);font-weight:700}
+.hours tr[data-today] td:first-child{position:relative}
+.hours tr[data-today] td:first-child::before{content:"";display:inline-block;width:6px;height:6px;background:var(--geranium);margin-right:7px;border-radius:50%}
+
+/* offer / money block */
+.offer{background:var(--wood);color:var(--cream)}
+.offer .panel__lede{color:var(--cream-dim)}
+.offer h2{color:var(--cream)}
+.offer blockquote{margin:20px 0 0;padding:16px 18px;border-left:3px solid var(--river-light);font:italic 400 16.5px/1.6 var(--font-b);color:var(--cream-dim);max-width:44em}
+.offer blockquote cite{display:block;margin-top:10px;font:600 11.5px/1 var(--font-d);font-style:normal;text-transform:uppercase;letter-spacing:.07em;color:var(--river-light)}
+.offer__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--wood-line);margin-top:28px;border:1px solid var(--wood-line)}
+.offer__item{background:var(--wood);padding:20px 18px}
+.offer__item b{display:block;font:700 17px/1.25 var(--font-d);margin-bottom:6px}
+.offer__item span{font:400 14px/1.45 var(--font-b);color:var(--cream-dim)}
+.offer__tap{margin-top:34px}
+.offer__tap h3{font:700 12.5px/1 var(--font-d);text-transform:uppercase;letter-spacing:.09em;color:var(--river-light);margin-bottom:14px}
+.tap{display:grid;gap:1px;background:var(--wood-line);border:1px solid var(--wood-line)}
+.tap__row{background:var(--wood);display:flex;justify-content:space-between;gap:14px;padding:14px 16px;align-items:baseline;flex-wrap:wrap}
+.tap__row b{font:700 16px/1.2 var(--font-d)}
+.tap__row span{font:400 13.5px/1.4 var(--font-b);color:var(--cream-dim);flex:1 1 220px;min-width:180px}
+.tap__deg{font:700 13px/1 var(--font-d);color:var(--river-light);font-variant-numeric:tabular-nums}
+
+/* o mieste */
+.about{display:grid;gap:26px}
+@media(min-width:760px){.about{grid-template-columns:1.05fr .95fr;align-items:center;gap:38px}.about--rev{direction:rtl}.about--rev>*{direction:ltr}}
+.about p{margin-top:14px;max-width:46em}
+.about figure{margin:0}
+.about img{width:100%;border:1px solid var(--ink-12)}
+.about figcaption{font:400 12.5px/1.4 var(--font-b);font-style:italic;color:var(--ink-70);margin-top:8px}
+
+/* splav */
+.routes{margin-top:24px;border-top:1px solid var(--ink-22)}
+.routes__row{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--ink-12)}
+.routes__row b{font:700 16.5px/1.2 var(--font-d);flex:1 1 220px}
+.routes__row .km{font:700 15px/1 var(--font-d);color:var(--river-deep);min-width:70px}
+.routes__row .time{font:400 14px/1 var(--font-b);color:var(--ink-70)}
+.routes__note{margin-top:20px;background:var(--paper-2);border:1px solid var(--ink-12);padding:16px 18px;max-width:52em}
+.routes__note b{font-family:var(--font-d)}
+.routes__note a{color:var(--river-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.routes__note small{display:block;margin-top:8px;color:var(--ink-70);font-size:13px}
+
+/* gallery */
+.gallery{display:grid;gap:16px;margin-top:22px}
+@media(min-width:640px){.gallery{grid-template-columns:1fr 1fr}}
+.gallery figure{margin:0;overflow:hidden;border:1px solid var(--ink-12)}
+.gallery img{transition:transform .5s cubic-bezier(.2,.7,.3,1)}
+.gallery a:hover img{transform:scale(1.045)}
+.gallery figcaption{padding:10px 2px 0;font:italic 400 13.5px/1.4 var(--font-b);color:var(--ink-70)}
+
+/* hodnotenia */
+.rate{display:grid;gap:16px;margin-top:22px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.rate__card{border:1px solid var(--ink-22);padding:22px 20px;background:var(--paper-2)}
+.rate__card .num{font-size:clamp(2.1rem,4vw,2.7rem);font-weight:700;color:var(--river-deep);display:block}
+.rate__card p{margin-top:6px;font-size:14px;color:var(--ink-70)}
+.rate__src{margin-top:16px;font-size:12.5px;color:var(--ink-45)}
+
+/* kontakt */
+.contact{display:grid;gap:32px}
+@media(min-width:760px){.contact{grid-template-columns:1fr 1fr}}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;margin:0}
+.contact dt{font:600 11.5px/1.3 var(--font-d);text-transform:uppercase;letter-spacing:.06em;color:var(--ink-45);white-space:nowrap;padding-top:2px}
+.contact dd{margin:0;font-size:15.5px}
+.contact a{color:var(--river-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.contact__map{display:inline-flex;min-height:46px;align-items:center;background:var(--river);color:var(--cream);padding:0 20px;text-decoration:none;font:700 14px/1 var(--font-d);margin-top:6px}
+.contact__map:hover{background:var(--river-deep)}
+
+/* footer */
+.foot{background:var(--wood-deep);color:var(--cream-dim);padding:34px var(--gut) calc(90px + env(safe-area-inset-bottom));font-size:13px}
+.foot__wrap{max-width:var(--maxw);margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px}
+.foot a{color:var(--river-light);text-decoration:underline;text-underline-offset:3px}
+@media(min-width:700px){.foot{padding-bottom:34px}}
+
+/* mobile bottom bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:var(--wood-deep);border-top:1px solid var(--wood-line);padding-bottom:env(safe-area-inset-bottom)}
+.mbar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:54px;color:var(--cream);font:700 14px/1 var(--font-d);text-decoration:none;letter-spacing:.01em}
+.mbar a:first-child{background:var(--geranium)}
+.mbar a:last-child{background:var(--river)}
+@media(min-width:700px){.mbar{display:none}.foot{padding-bottom:34px}}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Preskočiť na obsah</a>
+<p class="demo"><b>Neoficiálny návrh</b> — nie je to oficiálny web podniku · ukážka od webdavid.sk, objednávky ani rezervácie tu nefungujú</p>
+
+<header class="head">
+  <div class="head__row">
+    <div class="brand"><b>Koliba Uhlisko</b><span>Mičinská cesta 3 · Banská Bystrica</span></div>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="#ponuka">Ponuka</a><a href="#splav">Splav Hrona</a><a href="#hodnotenia">Hodnotenia</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="head__call" href="tel:+421911118056">Zavolať</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="hero">
+  <img class="hero__img" src="assets/hero.webp" alt="Zrubová koliba s kvitnúcimi muškátmi na balkóne, drevenými stolmi na terase a mostom cez Hron v pozadí" width="1196" height="896" fetchpriority="high">
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="hero__addr">Koliba · jedlo · pivo · pri Hrone</p>
+    <h1>Koliba Uhlisko</h1>
+    <p class="hero__tag">„Koliba,jedlo,pivo“<small>— popis na Facebooku</small></p>
+    <div class="hero__cta">
+      <a class="btn btn--primary" href="tel:+421911118056">Zavolať · 0911 118 056</a>
+      <a class="btn btn--ghost" href="https://www.facebook.com/people/Koliba-Uhlisko/61590610353350/" rel="noopener" target="_blank">Napísať na Facebooku</a>
+    </div>
+  </div>
+  <div class="hero__badge"><span class="num">0,0</span><small>štart splavu Hrona</small></div>
+</section>
+
+<svg class="wave" viewBox="0 0 1200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 13 C 100 2, 200 24, 300 13 S 500 2, 600 13 S 800 24, 900 13 S 1100 2, 1200 13"/></svg>
+
+<div class="levels">
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Teraz</b></div></div>
+  <section class="panel" id="stav" aria-label="Otváracie hodiny a aktuálny stav">
+    <h2>Aktuálna hladina</h2>
+    <p class="panel__lede">Živý stav podľa otváracích hodín (zdroj: Google) — bez rezervácie, stačí prísť.</p>
+    <div class="status">
+      <span id="statusDot" aria-hidden="true"></span>
+      <div><p id="statusText">Načítavam stav…</p><p id="todayLabel"></p></div>
+    </div>
+    <table class="hours">
+      <tbody>
+        <tr data-day="1"><td>Pondelok</td><td class="num">10:00–22:00</td></tr>
+        <tr data-day="2"><td>Utorok</td><td class="num">10:00–22:00</td></tr>
+        <tr data-day="3"><td>Streda</td><td class="num">10:00–22:00</td></tr>
+        <tr data-day="4"><td>Štvrtok</td><td class="num">10:00–22:00</td></tr>
+        <tr data-day="5"><td>Piatok</td><td class="num">10:00–22:00</td></tr>
+        <tr data-day="6"><td>Sobota</td><td class="num">13:00–22:00</td></tr>
+        <tr data-day="0"><td>Nedeľa</td><td class="num">13:00–22:00</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Ponuka</b></div></div>
+  <section class="panel offer" id="ponuka" aria-label="Aktuálna ponuka">
+    <h2>Na zahriatie</h2>
+    <blockquote>„S príchodom chladnejších dní vás pozývame do Koliby Uhlisko na chvíľu tepla a pohody. Ponúkame horúci čaj horúcu čokoládu a domácu kapustnicu, pripravenú s láskou a podľa tradície. Príď s partiou, po práci alebo len tak. Posedíme, zahrejeme sa a pokecáme.“<cite>Facebook Koliba Uhlisko, 25. 9. 2026</cite></blockquote>
+    <div class="offer__grid">
+      <div class="offer__item"><b>Horúci čaj</b><span>Na zahriatie pri stole aj s partiou.</span></div>
+      <div class="offer__item"><b>Horúca čokoláda</b><span>Sladké zohriatie do chladných dní.</span></div>
+      <div class="offer__item"><b>Domáca kapustnica</b><span>Pripravená s láskou a podľa tradície.</span></div>
+    </div>
+    <div class="offer__tap">
+      <h3>Čapované pivo</h3>
+      <div class="tap">
+        <div class="tap__row"><b>Svijany 11</b><span>Svetlý ležiak — vyvážená chuť a jemná horkosť.</span><span class="tap__deg">11°</span></div>
+        <div class="tap__row"><b>Plzeň 12</b><span>Svetlý ležiak — plná chuť a výrazná horkosť.</span><span class="tap__deg">12°</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Miesto</b></div></div>
+  <section class="panel" id="miesto" aria-label="O koliba">
+    <h2>Zrub na brehu Hrona</h2>
+    <div class="about">
+      <div>
+        <p class="panel__lede">Štítová strecha z dreveného šindľa, kamenný sokel a muškáty na zábradlí terasy.</p>
+        <p>Koliba Uhlisko je drevená zrubová stavba pri Hrone v Banskej Bystrici — vonkajšia terasa s drevenými stolmi pod prístreškom je stavaná na posedenie s partiou, po práci alebo len tak na niečo teplé.</p>
+      </div>
+      <figure><img src="assets/fasada.webp" alt="Symetrický pohľad na štítovú fasádu koliby s tmavým drevom a kvitnúcimi muškátmi po oboch stranách vstupu" width="880" height="879" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <div class="rail">
+    <div class="rail__line"></div>
+    <div class="rail__tag"><b>Splav Hrona</b></div>
+    <div class="rail__stop" style="top:20%"><i></i><b class="num">4,1</b></div>
+    <div class="rail__stop" style="top:37%"><i></i><b class="num">7,4</b></div>
+    <div class="rail__stop" style="top:75%"><i></i><b class="num">15,0</b></div>
+    <div class="rail__stop" style="top:96%"><i></i><b class="num">20,0</b></div>
+  </div>
+  <section class="panel" id="splav" aria-label="Splav Hrona">
+    <h2>Štart splavu Hrona</h2>
+    <p class="panel__lede">Vodácka požičovňa Hastrman štartuje splavy Hrona priamo od Koliby Uhlisko — rafty, kanoe aj kajaky, trasy od 1 do 4 hodín.</p>
+    <div class="routes">
+      <div class="routes__row"><b>Uhlisko → Iliaš</b><span class="num km">4,1 km</span><span class="time">do 1 hod.</span></div>
+      <div class="routes__row"><b>Uhlisko → Vlkanová (Geronimo)</b><span class="num km">7,4 km</span><span class="time">do 2 hodín</span></div>
+      <div class="routes__row"><b>Uhlisko → Sliač (Rybárik)</b><span class="num km">15,0 km</span><span class="time">do 3 hodín</span></div>
+      <div class="routes__row"><b>Uhlisko → Zvolen</b><span class="num km">20,0 km</span><span class="time">do 4 hodín</span></div>
+    </div>
+    <p class="routes__note">Splav zabezpečuje Vodácka požičovňa Hastrman, nie Koliba Uhlisko — trasy podľa ich príspevku z 20. 7. 2026. Ceny a rezervácie priamo u požičovne.</p>
+  </section>
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Terasa</b></div></div>
+  <section class="panel" id="terasa" aria-label="Fotografie terasy">
+    <h2>Terasa pri vode</h2>
+    <div class="gallery">
+      <a href="assets/terasa-vstup.webp" target="_blank" rel="noopener"><figure><img src="assets/terasa-vstup.webp" alt="Vchod na terasu Koliby Uhlisko s drevenou bránkou a zábradlím, v pozadí cesta k Hronu" width="1200" height="1153" loading="lazy"><figcaption>Vstup a posedenie na terase</figcaption></figure></a>
+      <a href="assets/terasa-strecha.webp" target="_blank" rel="noopener"><figure><img src="assets/terasa-strecha.webp" alt="Bočný pohľad na strechu zo šindľa a kryté posedenie na terase Koliby Uhlisko" width="1100" height="1341" loading="lazy"><figcaption>Kryté posedenie pod strechou</figcaption></figure></a>
+    </div>
+  </section>
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Hodnotenia</b></div></div>
+  <section class="panel" id="hodnotenia" aria-label="Hodnotenia">
+    <h2>Čo hovoria hodnotenia</h2>
+    <div class="rate">
+      <div class="rate__card"><span class="num">3,7</span><p>Google — priemerné hodnotenie z 3 recenzií</p></div>
+      <div class="rate__card"><span class="num">437</span><p>Facebook — sledovateľov, 2 recenzie</p></div>
+    </div>
+    <p class="rate__src">Zdroj: Google a Facebook Koliba Uhlisko, stav k 26. 9. 2026.</p>
+  </section>
+
+  <div class="rail"><div class="rail__line"></div><div class="rail__tag"><b>Kontakt</b></div></div>
+  <section class="panel" id="kontakt" aria-label="Kontakt">
+    <h2>Kontakt a otváracie hodiny</h2>
+    <div class="contact">
+      <dl>
+        <dt>Adresa</dt><dd>Mičinská cesta 3 (4158/3), Banská Bystrica</dd>
+        <dt>Telefón</dt><dd><a href="tel:+421911118056">0911 118 056</a></dd>
+        <dt>Kontakt</dt><dd><a href="https://www.facebook.com/people/Koliba-Uhlisko/61590610353350/" rel="noopener" target="_blank">Messenger — Koliba Uhlisko</a></dd>
+        <dt>Hodiny</dt><dd>Po–Pi <span class="num">10:00–22:00</span>, So–Ne <span class="num">13:00–22:00</span></dd>
+      </dl>
+      <div>
+        <a class="contact__map" href="https://www.google.com/maps/search/?api=1&query=Koliba+Uhlisko%2C+Mi%C4%8Dinsk%C3%A1+cesta+3%2C+Bansk%C3%A1+Bystrica" rel="noopener" target="_blank">Otvoriť v Google Mapách</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot__wrap">
+    <p>Neoficiálny návrh webu · <a href="https://webdavid.sk" rel="noopener">webdavid.sk</a> · 2026</p>
+    <p>Koliba Uhlisko · Mičinská cesta 3, Banská Bystrica · <a href="tel:+421911118056">0911 118 056</a></p>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Rýchle akcie">
+  <a href="tel:+421911118056">Zavolať</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Koliba+Uhlisko%2C+Mi%C4%8Dinsk%C3%A1+cesta+3%2C+Bansk%C3%A1+Bystrica" rel="noopener" target="_blank">Mapa</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+  var HOURS = {1:[[600,1320]],2:[[600,1320]],3:[[600,1320]],4:[[600,1320]],5:[[600,1320]],6:[[780,1320]],0:[[780,1320]]};
+  var NOTES = {};
+  var W = {open:"Teraz otvorené", closing:"Zatvárame o", closed:"Teraz zatvorené", next:"otvárame"};
+
+  var ACC = ["v nedeľu","v pondelok","v utorok","v stredu","vo štvrtok","v piatok","v sobotu"];
+  function now(){
+    try{
+      var p = new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Bratislava",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+      var m = {}; p.forEach(function(x){ m[x.type] = x.value; });
+      return { day:{Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[m.weekday], mins:(parseInt(m.hour,10)%24)*60 + parseInt(m.minute,10) };
+    }catch(err){ var d = new Date(); return { day:d.getDay(), mins:d.getHours()*60 + d.getMinutes() }; }
+  }
+  function hm(t){ if(t >= 1440) return "polnoci"; var h = Math.floor(t/60), m = t%60; return h + ":" + (m<10?"0":"") + m; }
+  function status(n){
+    var spans = HOURS[n.day] || [], prev = HOURS[(n.day+6)%7] || [];
+    for(var j=0;j<prev.length;j++){ if(prev[j][1] > 1440 && n.mins < prev[j][1]-1440) return {open:true, end:prev[j][1]-1440}; }
+    for(var i=0;i<spans.length;i++){ if(n.mins >= spans[i][0] && n.mins < spans[i][1]) return {open:true, end:spans[i][1]}; }
+    for(var k=0;k<spans.length;k++){ if(spans[k][0] > n.mins) return {open:false, when:"dnes o " + hm(spans[k][0])}; }
+    for(var d=1; d<=7; d++){ var dd = (n.day+d)%7, s = HOURS[dd]; if(s && s.length) return {open:false, when:(d===1 ? "zajtra" : ACC[dd]) + " o " + hm(s[0][0])}; }
+    return {open:false, when:""};
+  }
+  function render(){
+    var n = now(), dot = document.getElementById("statusDot"), text = document.getElementById("statusText");
+    if(HOURS && dot && text){
+      var st = status(n);
+      if(st.open){
+        var left = st.end - n.mins;
+        if(left <= 60){ dot.className = "is-closing"; text.innerHTML = W.closing + " " + hm(st.end) + " · <b>ešte " + left + " min</b>"; }
+        else { dot.className = "is-open"; text.innerHTML = W.open + " · <b>do " + hm(st.end) + "</b>"; }
+      }else{
+        var note = NOTES[n.day], noted = note && !(HOURS[n.day]||[]).length;
+        dot.className = noted ? "is-note" : "is-closed";
+        text.innerHTML = noted ? "Dnes " + note : W.closed + (st.when ? " · <b>" + W.next + " " + st.when + "</b>" : "");
+      }
+    }
+    var label = document.getElementById("todayLabel");
+    if(HOURS && label && !label.textContent){
+      var s = HOURS[n.day] || [];
+      if(s.length) label.textContent = "Dnes " + s.map(function(x){ return hm(x[0]) + "–" + (x[1] >= 1440 ? "0:00" : hm(x[1])); }).join(", ");
+      else if(!NOTES[n.day]) label.textContent = "Dnes zatvorené";
+    }
+    [].forEach.call(document.querySelectorAll('[data-day="' + n.day + '"]'), function(r){ r.setAttribute("data-today",""); });
+  }
+  render(); setInterval(render, 60000);
+})();
+</script>
+</body>
+</html>
